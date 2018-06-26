@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent any
     stages {
     stage('build'){
@@ -7,5 +7,11 @@ pipeline{
    }
   }
  }
+ post {
+   always{
+       archive 'dist/*.jar'
+    }
+ }
 }
+
 
